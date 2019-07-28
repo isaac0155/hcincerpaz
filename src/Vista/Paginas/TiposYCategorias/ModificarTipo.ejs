@@ -1,0 +1,26 @@
+<%- include("./../../Partes/cabecera.ejs") %>
+
+<link rel="stylesheet" href="/estilos/contenido.css">
+<link rel="stylesheet" href="/estilos/estiloFichas.css">
+<div class="contenido">
+  <form class="" action="/Tipos/Actualizar/<%= tipos.id_tipo_producto %>" id="form <%= tipos.id_tipo_producto %>" method="post">
+    <div class="jumbotron jumbotron-fluid content1">
+      <div class="divGrande">
+        <p>Modificar tipo <%= tipos.nombre_tipo %></p>
+        <div class="container div1">
+          <div class="div12">
+            <div class="form-group cajas1">
+              <label for="exampleFormControlInput1">Nombre del Tipo</label>
+              <input class="form-control form-control-lg" name="nombre" type="text" required placeholder="Nombre del Tipo" value="<%= tipos.nombre_tipo %>">
+            </div>
+          </div>
+          <input class="enlaceAzul btn btn-success" type="submit" name="" value="Guardar">
+          <a class="enlaceAzul btn btn-danger" href="/Tipos/Eliminar/<%= tipos.id_tipo_producto %>"> Eliminar </a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<%- include("./../../Partes/piePagina.ejs") %>

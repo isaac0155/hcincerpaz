@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="/estilos/estiloModal.css">
+<div class="modal" id="modalCat">
+  <div class="contenedorCerrar">
+    <i class="modalCerrar fas fa-times-circle" id="desCat"></i>
+  </div>
+  <% if(producto.id=="no") { %>
+    <form class="" action="/Categorias/Anadir" method="post">
+  <% } else { if(producto.id=="cat") {%>
+    <form class="" action="/Categorias/Anadir/cat/<%=producto.id_tipo_producto%>" method="post">
+      <input type="text" name="tipo" value="<%=producto.id_tipo_producto%>" style="display:none">
+    <% } else {%>
+    <form class="" action="/Categorias/Anadir/<%=producto.id_producto%>/1" method="post">
+    <% }
+     }%>
+    <div class="jumbotron jumbotron-fluid content1">
+      <div class="divGrande">
+
+        <p>Registro de la Categoria</p>
+
+        <div class="container div1">
+          <div class="div12">
+            <% if(producto.id!="cat") {%>
+            <div class="form-group cajas1">
+              <label for="exampleFormControlInput1">Tipo de Producto </label>
+              <!-- <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg"> -->
+              <div class="form-group">
+                <select class="form-control form-control-lg" name="tipo" id="exampleFormControlSelect1" required>
+                  <option value="1" selected>ladrillo</option>
+                </select>
+              </div>
+            </div>
+            <% } %>
+            <div class="form-group cajas1">
+              <label for="exampleFormControlInput1">Nombre de la Categoria</label>
+              <input class="form-control form-control-lg" name="nombre" type="text" required placeholder="Nombre de la Categoria" value="">
+            </div>
+          </div>
+          <input class="enlaceAzul btn btn-info" type="submit" name="" value="Ingresar">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<script src="/scripts/scriptModal.js" charset="utf-8"></script>

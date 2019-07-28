@@ -1,0 +1,149 @@
+<%- include("./../../Partes/cabecera.ejs") %>
+
+
+<div class="contenido">
+
+
+
+      <% if(numero==0) { %>
+
+          <form class="" action="/" method="post" enctype="multipart/form-data">
+          <div class="jumbotron jumbotron-fluid content1" style="  background: #eeed;">
+            <div class="divGrande">
+              <img src="/img/imagenRegistro.jpg" alt="" width="150px" height="150px">
+              <p>Detalle de Producto</p>
+              <div class="container div1">
+                <div class="div12">
+                  <div class="form-group cajas1">
+                    <label for="exampleFormControlInput1">Nombre del Producto</label>
+                    <input class="form-control form-control-lg" name="nombre" type="text" required placeholder="Nombre del Producto" value="<%=producto.nombre_producto%>" disabled>
+                  </div>
+                  <div class="form-group cajas1">
+                    <label for="exampleFormControlInput1">Tipo de Producto </label>
+                    <!-- <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg"> -->
+                    <div class="form-group">
+                      <select class="form-control form-control-lg" name="tipo" id="exampleFormControlSelect1" required disabled >
+                        <option value="1" selected>ladrillo</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group cajas1">
+                    <label for="exampleFormControlInput1">Categoria del Producto </label>
+                    <!-- <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg"> -->
+                    <div class="form-group">
+                      <select class="form-control form-control-lg" name="cat" id="exampleFormControlSelect1" required disabled>
+                        <option value="1" selected>6 huecos</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group cajas1">
+                    <label for="exampleFormControlInput1">Precio de Compra del Producto</label>
+                    <input class="form-control form-control-lg" type="number" name="precom" placeholder="0" value="<%=producto.precio_compra%>" required disabled>
+                  </div>
+                  <div class="form-group cajas1">
+                    <label for="exampleFormControlInput1">Precio de Venta del Producto</label>
+                    <input class="form-control form-control-lg" type="number" name="preven" required placeholder="0" value="<%=producto.precio_venta%>" disabled>
+                  </div>
+                  <div class="form-group cajas1">
+                    <label for="exampleFormControlInput1">Stock del Producto</label>
+                    <input class="form-control form-control-lg" type="number" name="stock" placeholder="0" value="<%=producto.stock%>" required disabled>
+                  </div>
+
+                  <div class="form-group cajas1 ">
+                    <label for="exampleFormControlInput1">Foto del Producto</label>
+                    <div class="input-group mb-3">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="foto" name="foto" aria-describedby="inputGroupFileAddon03" value="/fotos/Productos/<%=producto.nombre_foto%>" disabled>
+                        <label class="custom-file-label" for="foto" id="lblfoto">Seleccione una Imagen</label>
+                      </div>
+                    </div>
+                    <input type="text" name="rutaoriginal" value="<%=producto.nombre_foto%>" style="display: none" disabled>
+                    <div class="tol">
+                      <img src="/fotos/Productos/<%=producto.nombre_foto%>" class="img-fluid" id="preVisualizar">
+                    </div>
+                  </div>
+                </div>
+                <a class="enlaceAzul btn btn-info" href="/Productos/Modificar/<%=producto.id_producto%>">Modificar</a>
+                <% if(producto.id_producto != 1) { %>
+                
+                  <a class="enlaceRojo btn btn-danger" href="/Productos/Eliminar/<%=producto.id_producto%>">Eliminar</a>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      <% } else { %>
+
+        <form class="" action="/Productos/Actualizar/<%=producto.id_producto%>" method="post" enctype="multipart/form-data">
+          <div class="jumbotron jumbotron-fluid content1">
+            <div class="divGrande">
+              <img src="/img/imagenRegistro.jpg" alt="" width="150px" height="150px">
+              <p>Modificar Producto</p>
+              <div class="container div1">
+                <div class="div12">
+                  <div class="form-group cajas1">
+                    <label for="exampleFormControlInput1">Nombre del Producto</label>
+                    <input class="form-control form-control-lg" name="nombre" type="text" required placeholder="Nombre del Producto" value="<%=producto.nombre_producto%>">
+                  </div>
+                  <div class="form-group cajas1">
+                    <label for="exampleFormControlInput1">Tipo de Producto <i id="actTipo" class="modalActivar fas fa-plus-circle"></i></label>
+                    <!-- <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg"> -->
+                    <div class="form-group">
+                      <select class="form-control form-control-lg" name="tipo" id="exampleFormControlSelect1" required>
+                        <option value="1" selected>ladrillo</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group cajas1">
+                    <label for="exampleFormControlInput1">Categoria del Producto <i id="actCat" class="modalActivar fas fa-plus-circle"></i></label>
+                    <!-- <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg"> -->
+                    <div class="form-group">
+                      <select class="form-control form-control-lg" name="cat" id="exampleFormControlSelect1" required>
+                        <option value="1" selected>6 huecos</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group cajas1">
+                    <label for="exampleFormControlInput1">Precio de Compra del Producto</label>
+                    <input class="form-control form-control-lg" type="number" name="precom" placeholder="0" value="<%=producto.precio_compra%>" required>
+                  </div>
+                  <div class="form-group cajas1">
+                    <label for="exampleFormControlInput1">Precio de Venta del Producto</label>
+                    <input class="form-control form-control-lg" type="number" name="preven" required placeholder="0" value="<%=producto.precio_venta%>" >
+                  </div>
+                  <div class="form-group cajas1">
+                    <label for="exampleFormControlInput1">Stock del Producto</label>
+                    <input class="form-control form-control-lg" type="number" name="stock" placeholder="0" value="<%=producto.stock%>" required>
+                  </div>
+
+                  <div class="form-group cajas1 ">
+                    <label for="exampleFormControlInput1">Foto del Producto</label>
+                    <div class="input-group mb-3">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="foto" name="foto" aria-describedby="inputGroupFileAddon03" value="/fotos/Productos/<%=producto.nombre_foto%>">
+                        <label class="custom-file-label" for="foto" id="lblfoto">Seleccione una Imagen</label>
+                      </div>
+                    </div>
+                    <input type="text" name="rutaoriginal" value="<%=producto.nombre_foto%>" style="display: none">
+                    <div class="tol">
+                      <img src="/fotos/Productos/<%=producto.nombre_foto%>" class="img-fluid" id="preVisualizar">
+                    </div>
+                  </div>
+                </div>
+                <input class="enlaceAzul btn btn-info" type="submit" name="" value="Guardar">
+              </div>
+            </div>
+          </div>
+        </form>
+
+      <% } %>
+</div>
+<%- include("./../../Partes/añadirTipo.ejs") %>
+<%- include("./../../Partes/añadirCategoria.ejs") %>
+<%- include("./../../Scripts/scriptAnadir.ejs") %>
+<script src="/scripts/scriptPrevisualizar.js" charset="utf-8"></script>
+<link rel="stylesheet" href="/estilos/estiloFichas.css">
+<link rel="stylesheet" href="/estilos/contenido.css">
+<%- include("./../../Scripts/scriptAnadir.ejs") %>
+<%- include("./../../Partes/piePagina.ejs") %>

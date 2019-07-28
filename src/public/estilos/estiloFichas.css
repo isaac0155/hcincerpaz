@@ -1,0 +1,102 @@
+.ficha
+{
+  width: 16rem;
+  min-height: 330px;
+  background: white;
+  border: solid 1px #333;
+  box-shadow: 2px black;
+  border-radius: 5px;
+  text-align: left;
+  padding-bottom: 10px;
+}
+.ficha span
+{
+  margin-left: 15px;
+}
+.enlaceAzul
+{
+  padding: 10px;
+//  background: #2196f3;
+  border-radius: 5px;
+  //color: #eee;
+  width: auto;
+  text-decoration: none;
+  margin: 30px auto auto auto;
+
+}
+
+.contEnlaceAzul
+{
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+.enlaceAzul:hover
+{
+  text-decoration: none;
+  color: #eee;
+  font-weight: bold;
+  box-shadow: 3px 3px #3338;
+}
+
+.enlaceRojo
+{
+  padding: 10px;
+//  background: #e91e63;
+  border-radius: 5px;
+  //color: #eee;
+  width: auto;
+  text-decoration: none;
+  margin: 30px auto auto auto;
+
+}
+
+.contEnlaceRojo
+{
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+.enlaceRojo:hover
+{
+  text-decoration: none;
+  color: #eee;
+  font-weight: bold;
+  box-shadow: 3px 3px #3338;
+}
+
+
+.ficha:hover
+{
+  box-shadow: 5px 5px #3335;
+  border: solid 4px #333;
+
+}
+.img-fluid
+{
+  max-width: 100%;
+  max-height: 152px;
+
+}
+.contenedorFotoResponsive
+{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.ficha-importante
+{
+  margin-top: 10px;
+  display: block;
+}
+.nuevo
+{
+  display: block;
+  font-size: 25px;
+  text-align: center;
+  width: calc(100%-15px);
+}

@@ -1,0 +1,69 @@
+<%- include("./../../Partes/cabecera.ejs") %>
+<link rel="stylesheet" href="/estilos/estado.css">
+<div class="contenido">
+
+      <form class="divGrande" style="background:#eeed;" action="/registrarPersonal" method="post">
+        <h1 style="padding:20px;">
+          Ingresar Nuevo Personal
+        </h1>
+        <div class="contenido" >
+          <div class="divGrande" style="padding:40px; background:rgba(137, 88, 21, 0);">
+            <div class="form-group">
+              <label for="ci" class="form-control-lg" >Ingresar CI</label>
+              <input type="number" class="form-control form-control-lg" placeholder="CI" name="ci" id="ci">
+            </div>
+            <div class="form-group">
+              <label for="nombre"class="form-control-lg">Nombres</label>
+              <input type="text" class="form-control form-control-lg" placeholder="Ingresar Nombres" name="nombre" id="nombre">
+            </div>
+            <div class="form-group ">
+              <label for="apellido"class="form-control-lg">Apellidos</label>
+              <input type="text" class="form-control form-control-lg" placeholder="Ingresar Apellidos" name="apellido" id="apellido">
+            </div>
+            <div class="form-group">
+              <label for="tel"class="form-control-lg">Telefono</label>
+              <input type="text" class="form-control form-control-lg" placeholder="Ingresar Telefono" name="tel" id="tel">
+            </div>
+            <div class="form-group">
+              <label for="correo" class="form-control-lg">Ingresar Email</label>
+              <input type="email" class="form-control form-control-lg" aria-describedby="emailHelp" placeholder="Ingrese email" name="correo" id="correo">
+            </div>
+            <div class="form-group">
+              <label for="dir" class="form-control-lg">Direccion de Domicilio</label>
+              <input type="text" class="form-control form-control-lg" placeholder="Ingresar Direccion" name="dir" id="dir">
+            </div>
+            <div class="form-group">
+              <label for="contra" class="form-control-lg">Contraseña</label>
+              <input type="password" class="form-control form-control-lg" placeholder="Ingresar Contraseña" name="contra" id="contra">
+            </div>
+            <div class="form-group">
+              <label for="fena" class="form-control-lg">Fecha de Nacimiento</label>
+              <input type="date" class="form-control form-control-lg" placeholder="Ingresar Fecha de naciemiento" name="fena" id="fena">
+            </div>
+            <div class="contenido" style="padding:0px;">
+              <div class="form-group">
+                <label for="cargo" class="form-control-lg">Cargo</label>
+                 <select class="form-control form-control-lg" name="cargo" id="cargo">
+                   <option value="1">Empleado</option>
+                   <option value="2">Administrador</option>
+                 </select>
+               </div>
+            </div>
+            <div class="contenido" style="padding:0px;">
+              <div class="form-group">
+                <label for="actividad" class="form-control-lg">Actividad de Personal</label>
+                 <select class="form-control form-control-lg" name="actividad" id="actividad">
+                   <option value="1">Activo</option>
+                   <option value="2">Inactivo (Despedido o Ausente)</option>
+                 </select>
+               </div>
+            </div>
+          </div>
+        </div>
+        <div class="" style="padding:30px;">
+          <input type="submit" name="" value="ingresar">
+        </div>
+        </form>
+      </div>
+
+<%- include("./../../Partes/piePagina.ejs") %>

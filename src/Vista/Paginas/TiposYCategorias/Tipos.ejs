@@ -1,0 +1,48 @@
+<%- include("./../../Partes/cabecera.ejs") %>
+
+
+
+<style media="screen">
+  .ficha
+  {
+    height:360px;
+  }
+</style>
+
+  <h1 id="titulo">Lista de tipos</h1>
+
+<div class="Productos" style="background:#eeed; max-width:80%; margin-left:10%; margin-right:10%; min-width: 350px">
+  <div class="ficha modalActivar" id="actTipo">
+    <div class="contenedorFotoResponsive modalActivar" id="actTipo">
+      <img src="/img/mas.png" alt="" class="img-fluid modalActivar" height="100px" id="actTipo"> <br>
+    </div>
+    <br>
+    <br>
+    <span class="nuevo modalActivar" ><strong id="actTipo" class="modalActivar">Añadir <br> Nuevo Tipo</strong> </span>
+  </div>
+
+  <% for(var i=0; i < tipos.length; i++) { %>
+        <div class="ficha" id="actTipo">
+      <div class="contenedorFotoResponsive">
+        <img src="/img/tipo.png" alt="" class="img-fluid" height="100px"> <br>
+      </div>
+      <span class="ficha-importante"><strong>Nombre</strong>: <br> <%=tipos[i].nombre%></span> <br>
+      <div class="contEnlaceAzul">
+        <a class="enlaceAzul btn btn-outline-info"style="margin-top:-10px"; href="/Tipos/Modificar/<%= tipos[i].id %>" >Modificar</a>
+        <br>
+        <a class="enlaceAzul btn btn-info" style="margin-top:10px;" href="/Categorias/Ver/<%=tipos[i].id%>">Ver categorias</a>
+      </div>
+
+    </div>
+  <%}    %>
+</div>
+
+<link rel="stylesheet" href="/estilos/contenido.css">
+<script src="/scripts/scriptFichas.js" charset="utf-8"></script>
+
+
+<%- include("./../../Partes/añadirTipo.ejs") %>
+<%- include("./../../Scripts/scriptAnadir.ejs") %>
+
+<link rel="stylesheet" href="/estilos/estiloFichas.css">
+<%- include("./../../Partes/piePagina.ejs") %>

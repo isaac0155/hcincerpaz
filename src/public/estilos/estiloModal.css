@@ -1,0 +1,32 @@
+.modal
+{
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #666a;
+  min-height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.modalCerrar
+{
+  float: right;
+  margin-right: 20px;
+  margin-left: 0px;
+  font-size: 50px;
+  transition: 0.5s all ease;
+}
+.modalCerrar:hover
+{
+  background: #eee4;
+  padding: 5px;
+}
+.contenedorCerrar
+{
+
+  display: block;
+  width: 100%;
+}

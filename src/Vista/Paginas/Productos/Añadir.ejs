@@ -1,0 +1,74 @@
+<%- include("./../../Partes/cabecera.ejs") %>
+
+<link rel="stylesheet" href="/estilos/contenido.css">
+<link rel="stylesheet" href="/estilos/estiloFichas.css">
+<div class="contenido">
+  <form class="" action="/Productos/Anadir" method="post" enctype="multipart/form-data">
+    <div class="jumbotron jumbotron-fluid content1">
+      <div class="divGrande">
+        <img src="/img/imagenRegistro.jpg" alt="" width="150px" height="150px">
+        <p>Registro de Producto</p>
+        <div class="container div1">
+          <div class="div12">
+            <div class="form-group cajas1">
+              <label for="exampleFormControlInput1">Nombre del Producto</label>
+              <input class="form-control form-control-lg" name="nombre" type="text" required placeholder="Nombre del Producto" value="">
+            </div>
+            <div class="form-group cajas1">
+              <label for="exampleFormControlInput1">Tipo de Producto <i id="actTipo" class="modalActivar fas fa-plus-circle"></i> </label>
+              <!-- <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg"> -->
+              <div class="form-group">
+                <select class="form-control form-control-lg" name="tipo" id="exampleFormControlSelect1" required>
+                  <option value="1" selected>ladrillo</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group cajas1">
+              <label for="exampleFormControlInput1">Categoria del Producto <i id="actCat" class="modalActivar fas fa-plus-circle"></i></label>
+              <!-- <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg"> -->
+              <div class="form-group">
+                <select class="form-control form-control-lg"  name="cat" id="exampleFormControlSelect1" required>
+                  <option value="1" selected>6 huecos</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group cajas1">
+              <label for="exampleFormControlInput1">Precio de Compra del Producto</label>
+              <input class="form-control form-control-lg" type="number" name="precom" placeholder="0" value="" required>
+            </div>
+            <div class="form-group cajas1">
+              <label for="exampleFormControlInput1">Precio de Venta del Producto</label>
+              <input class="form-control form-control-lg" type="number" name="preven" required placeholder="0" value="" >
+            </div>
+            <div class="form-group cajas1">
+              <label for="exampleFormControlInput1">Stock del Producto</label>
+              <input class="form-control form-control-lg" type="number" name="stock" placeholder="0" value="" required>
+            </div>
+
+            <div class="form-group cajas1 ">
+              <label for="exampleFormControlInput1">Foto del Producto</label>
+              <div class="input-group mb-3">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="foto" name="foto" aria-describedby="inputGroupFileAddon03" required>
+                  <label class="custom-file-label" for="foto" id="lblfoto">Seleccione una Imagen</label>
+                </div>
+              </div>
+              <div class="tol">
+                <img src="/img/noimage.png" class=" img-fluid" id="preVisualizar">
+              </div>
+            </div>
+          </div>
+          <input class="enlaceAzul btn btn-info" type="submit" name="" value="Ingresar">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<%- include("./../../Partes/añadirTipo.ejs") %>
+<%- include("./../../Partes/añadirCategoria.ejs") %>
+<%- include("./../../Scripts/scriptAnadir.ejs") %>
+
+<script src="/scripts/scriptPrevisualizar.js" charset="utf-8"></script>
+
+<%- include("./../../Partes/piePagina.ejs") %>

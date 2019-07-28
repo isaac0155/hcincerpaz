@@ -1,0 +1,81 @@
+body
+{
+
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+.contenido
+{
+  text-align: center;
+  width: 100%;
+
+}
+.content1
+{
+  width: 80%;
+  background: #eeed;
+  font-size: 35px;
+}
+.cajas1
+{
+  text-align: left;
+  font-size: 20px;
+}
+.divGrande
+{
+  width: 100%;
+
+}
+.div1
+{
+  width: 80%;
+}
+.tol
+{
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.tamanioimg
+{
+  //width: 300px;
+  height: 300px;
+}
+form
+{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.fa-plus-circle
+{
+  color: #000;
+}
+#titulo
+{
+  color: white;
+  font-weight: bolder;
+  text-shadow: 2px 2px black;
+}
+/*
+.enlaceAzul
+{
+  padding: 15px;
+  font-size: 30px;
+//  background: #2196f3;
+  border-radius: 5px;
+  //color: #eee;
+  width: auto;
+  text-decoration: none;
+  margin: 40px auto;
+}
+
+.enlaceAzul:hover
+{
+  text-decoration: none;
+  color: #eee;
+  font-weight: bold;
+  box-shadow: 3px 3px #3338;
+}
+*/

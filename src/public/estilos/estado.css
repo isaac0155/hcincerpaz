@@ -1,0 +1,94 @@
+
+.contenido
+{
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.divGrande
+{
+  text-align: left;
+  width: 80%;
+  background: white;
+}
+.tablaDeProductos
+{
+  width: 100%;
+  height: 190px;
+  overflow: scroll;
+  background: #eee;
+}
+.centrado
+{
+  width: 98%;
+  min-width: 950px;
+}
+.cantDetalle
+{
+  width: 100px;
+}
+.tablaDeProductos3
+{
+  width: 100%;
+  overflow: scroll;
+  background: #eee;
+
+}
+.tablaDeProductos4
+{
+  width: 100%;
+  height: 200px;
+  overflow: scroll;
+}
+#wrapper
+{
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+  background: black;
+  padding: 10px;
+}
+.historial
+{
+  width: 94%;
+  background: white;
+
+}
+.tablaDeProductos5
+{
+  width: 100%;
+  overflow: scroll;
+  background: #eee;
+  padding: 30px;
+}
+.akg
+{
+  float: left;
+  width: 250px;
+  padding: 15px;
+}
+.mejo
+{
+  width: 100%;
+  display: flex;
+  margin-top: 50px;
+  background: #d3cfd4;
+  font-size: 20px;
+}
+.filtr
+{
+  overflow: hidden;
+  width: 100%;
+}
+.polk
+{
+  width: 100%;
+  margin-bottom:-70px;
+  margin-top:40px;
+  background: #d3cfd4;
+  text-align:left;
+  font-size:30px;
+  padding:20px;
+}

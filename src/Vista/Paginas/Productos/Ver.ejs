@@ -1,0 +1,48 @@
+<%- include("./../../Partes/cabecera.ejs") %>
+
+<link rel="stylesheet" href="/estilos/estiloFichas.css">
+<link rel="stylesheet" href="/estilos/contenido.css">
+
+<% if(todo!=undefined)
+{ %>
+  <h1 id="titulo">Lista de todos los productos</h1>
+<%} else {%>
+<% if(productos[keys[0]]!=undefined)
+{ %>
+  <h1 id="titulo">Lista de productos <%=productos[keys[0]].nombre_tipo%> / <%=productos[keys[0]].nombre_categoria%> </h1>
+<%} else {%>
+  <h1 id="titulo">Lista vacía </h1>
+  <%} }%>
+  <div class="Productos" style="background:#eeed; max-width:80%; margin-left:10%; margin-right:10%; min-width: 350px">
+<a href="/Productos/Anadir" style="color(#000)">
+    <div class="Productos" style="background:#eeed; max-width:80%; margin-left:10%; margin-right:10%; min-width: 350px">
+      <div class="ficha modalActivar" id="actTipo">
+        <div class="contenedorFotoResponsive modalActivar" id="actTipo">
+          <img src="/img/mas.png" alt="" class="img-fluid modalActivar" height="100px" id="actTipo"> <br>
+        </div>
+        <br>
+        <br>
+        <span class="nuevo modalActivar" ><strong id="actTipo" style="color(#000)" class="modalActivar">Añadir <br> Nuevo Producto</strong> </span>
+      </div>
+      </a>
+    <% for(var i=0; i < productos.length; i++) { %>
+      <% if(productos[keys[i]].id_producto != 1) { %>
+        <div class="ficha" id = "producto<%=productos[keys[i]].id_producto%>">
+          <div class="contenedorFotoResponsive">
+            <img src="/fotos/Productos/<%=productos[keys[i]].nombre_foto%>" alt="" class="img-fluid" height="100px">
+          </div>
+          <span class="ficha-importante"><strong>Nombre</strong>: <%=productos[keys[i]].nombre_producto%></span>
+          <span><strong>Precio venta</strong>: <%=productos[keys[i]].precio_venta%></span> <br>
+          <span><strong>Stock</strong>: <%=productos[keys[i]].stock%></span>
+          <div class="contEnlaceAzul">
+            <a class="enlaceAzul btn btn-outline-info" href="/Productos/Detalle/<%=productos[keys[i]].id_producto%>">Ver más</a>
+          </div>
+        </div>
+      <% } %>
+    <%}    %>
+  </div>
+
+
+
+<script src="/scripts/scriptFichas.js" charset="utf-8"></script>
+<%- include("./../../Partes/piePagina.ejs") %>

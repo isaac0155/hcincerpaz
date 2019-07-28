@@ -1,0 +1,40 @@
+#piePagina
+{
+  width: 100%;
+}
+.letras
+{
+  text-align: center;
+  background: black;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+.pietitulo
+{
+  font-size: 20px;
+  font-weight: bold;
+}
+.tarjeta
+{
+  border:none;
+  //width: 25rem;
+  width: 100%;
+  min-width: 300px;
+}
+.kepy
+{
+  background: black;
+}
+.contenidoTarjeta
+{
+  background: black;
+  color:#bcc1c1;
+  padding: 1.25rem
+}
+
+.color1
+{
+  color:#8a8488;
+}

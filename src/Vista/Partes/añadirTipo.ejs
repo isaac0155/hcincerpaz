@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/estilos/estiloModal.css">
+<div class="modal" id="modalTipo">
+  <div class="contenedorCerrar">
+    <i class="modalCerrar fas fa-times-circle" id="desTipo"></i>
+  </div>
+  <% if(producto.id=="no") { %>
+    <form class="" action="/Tipos/Anadir" method="post">
+  <% } else { if(producto.id=="tipo") {%>
+    <form class="" action="/Tipos/Anadir/tipo" method="post">
+    <% } else {%>
+    <form class="" action="/Tipos/Anadir/<%=producto.id_producto%>" method="post">
+    <% }
+     }%>
+
+    <div class="jumbotron jumbotron-fluid content1">
+      <div class="divGrande">
+
+        <p>Registro de Tipo</p>
+        <div class="container div1">
+          <div class="div12">
+            <div class="form-group cajas1">
+              <label for="exampleFormControlInput1">Nombre del Tipo</label>
+              <input class="form-control form-control-lg" name="nombre" type="text" required placeholder="Nombre del Tipo" value="">
+            </div>
+          </div>
+          <input class="enlaceAzul btn btn-info" type="submit" name="" value="Ingresar">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<script src="/scripts/scriptModal.js" charset="utf-8"></script>

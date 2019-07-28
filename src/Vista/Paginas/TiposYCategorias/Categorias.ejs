@@ -1,0 +1,50 @@
+<%- include("./../../Partes/cabecera.ejs") %>
+
+<link rel="stylesheet" href="/estilos/estiloFichas.css">
+<link rel="stylesheet" href="/estilos/contenido.css">
+
+<style media="screen">
+  .ficha
+  {
+    height:360px;
+  }
+</style>
+
+<% if(cat[keys[0]]!=undefined)
+{ %>
+  <h1 id="titulo">Lista de <%=cat[keys[0]].nombre_tipo%> </h1>
+<%} else {%>
+  <h1 id="titulo">Lista vacía </h1>
+  <%} %>
+
+<div class="Productos" style="background:#eeed; max-width:80%; margin-left:10%; margin-right:10%; min-width: 350px">
+  <div class="Productos" style="background:#eeed; max-width:80%; margin-left:10%; margin-right:10%; min-width: 350px">
+    <div class="ficha modalActivar" id="actCat">
+      <div class="contenedorFotoResponsive modalActivar" id="actCat">
+        <img src="/img/mas.png" alt="" class="img-fluid modalActivar" height="100px" id="actCat"> <br>
+      </div>
+      <br>
+      <br>
+      <span class="nuevo modalActivar" ><strong id="actCat" class="modalActivar">Añadir <br> Nueva Categoria</strong> </span>
+    </div>
+  <% for(var i=0; i < cat.length; i++) { %>
+    <div class="ficha" id = "categoria<%=cat[keys[i]].id_categoria_producto%>">
+      <div class="contenedorFotoResponsive">
+        <img src="/img/tipo.png" alt="" class="img-fluid" height="100px"> <br>
+      </div>
+      <span class="ficha-importante"><strong>Nombre Categoria</strong>: <br> <%=cat[keys[i]].nombre_categoria%></span> <br>
+      <!-- <span><strong>Nombre Tipo</strong>: <%=cat[keys[i]].nombre_tipo%></span> <br> -->
+      <div class="contEnlaceAzul">
+        <a class="enlaceAzul btn btn-outline-info"style="margin-top:-10px"; href="/Categorias/Modificar/<%=cat[keys[i]].id_categoria_producto%>" >Modificar</a>
+        <br>
+        <a class="enlaceAzul btn btn-info" style="margin-top:10px;" href="/Productos/Ver/<%=cat[keys[i]].id_categoria_producto%>">Ver Productos</a>
+      </div>
+    </div>
+  <%}    %>
+</div>
+
+
+<script src="/scripts/scriptFichas.js" charset="utf-8"></script>
+<%- include("./../../Partes/añadirCategoria.ejs") %>
+
+<%- include("./../../Partes/piePagina.ejs") %>

@@ -1,0 +1,56 @@
+<script type="text/javascript">
+
+var tipos = [];
+<% for (var i = 0; i < tipos.length; i++) { %>
+  tipos.push({nombre:"<%= tipos[i].nombre %>",id:"<%= tipos[i].id %>", cat:[]});
+  var categorias = [];
+    <% if(tipos[i].cat!=undefined){
+      for (var o = 0; o < tipos[i].cat.length; o++) { %>
+        categorias.push({nombre: "<%= tipos[i].cat[o].nombre %>", id: "<%= tipos[i].cat[o].id %>" });
+      <% }
+    }%>
+  tipos[<%=i %>].cat = categorias;
+
+  
+<% } %>
+
+var cbxtipos = document.getElementsByName("tipo");
+for (var i = 0; i < cbxtipos.length; i++) {
+  cbxtipos[i].innerHTML="";
+  for (var o = 0; o < tipos.length; o++) {
+    var option = document.createElement("option");
+    option.appendChild(document.createTextNode(tipos[o].nombre));
+    option.value=tipos[o].id;
+    cbxtipos[i].appendChild(option);
+  }
+  cargarCbxCat(cbxtipos[i]);
+  cbxtipos[i].addEventListener("change",(e)=>
+  {
+    cargarCbxCat(e.target);
+    for (var i = 0; i < cbxtipos.length; i++) {
+      cbxtipos[i].selectedIndex = e.target.selectedIndex;
+    }
+  });
+
+
+}
+function cargarCbxCat(e)
+{
+  var cbxcat = document.getElementsByName("cat");
+  for (var i = 0; i < cbxcat.length; i++) {
+    cbxcat[i].innerHTML="";
+    for (var o = 0; o < tipos.length; o++) {
+      if(tipos[o].id==e.value)
+      {
+        for (var u = 0; u < tipos[o].cat.length; u++) {
+          var option = document.createElement("option");
+          option.appendChild(document.createTextNode(tipos[o].cat[u].nombre));
+          option.value = tipos[o].cat[u].id;
+          cbxcat[i].appendChild(option);
+        }
+      }
+    }
+  }
+}
+
+</script>

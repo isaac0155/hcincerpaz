@@ -1,0 +1,22 @@
+<%- include("./../Partes/cabecera.ejs") %>
+<style media="screen">
+  body
+  {
+    text-align: center;
+  }
+</style>
+<% if(usuario) { %>
+  <p style="background:white;"> Usuario actual: <%=usuario.nombre%> <%=usuario.apellidos%></p>
+  <% } %>
+<p style="background:white;">Inicio <%=nombre%></p>
+
+<p>Bienvenido</p>
+<form class="" action="/" method="post">
+  <input type="text" name="nombre" placeholder = "Ingresa tu nombre" value="">
+  <input type="submit" name="" value="Ingresar">
+</form>
+
+<img alt="" class="i-amphtml-fill-content i-amphtml-replaced-content" decoding="async" src="https://tpc.googlesyndication.com/simgad/1958890002151647788">
+
+
+<%- include("./../Partes/piePagina.ejs") %>
